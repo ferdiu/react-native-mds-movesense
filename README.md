@@ -10,8 +10,18 @@ npm install react-native-movesense
 
 ## Usage
 
+Import:
+
 ```js
-import { multiply } from 'react-native-movesense';
+import RNMovesense, {
+    type MovesenseReadyDevice,
+    type MovesenseDevice,
+    type ResponseMessage,
+    type ErrorEvent,
+    type NotificationErrorEvent,
+    type NotificationEvent,
+    type MovesenseScannedDevice,
+} from 'react-native-movesense';
 
 // ...
 
