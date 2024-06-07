@@ -189,6 +189,11 @@ public class MovesenseModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void disconnect(String address, final Promise promise) {
         try {
+            synchronized (lock) {
+                if (this.mConnectedDevices.containsKey(address)) {
+                    this.mConnectedDevices.remove(address);
+                }
+            }
             mds.disconnect(address);
             promise.resolve(null);
         } catch (Exception e) {
