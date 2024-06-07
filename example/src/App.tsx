@@ -32,6 +32,10 @@ const permissions = [
     PermissionsAndroid.PERMISSIONS.BLUETOOTH_SCAN as Permission,
 ];
 
+// Signals to subscribe to
+// src: https://www.movesense.com/docs/esw/api_reference
+const singlas = ['/Meas/ECG/512', '/Meas/IMU9/416', '/Meas/HR', '/Meas/Temp'];
+
 export default function App() {
     // State
     const [initialized, setInitialized] = React.useState<boolean>(false);
@@ -42,6 +46,9 @@ export default function App() {
     const [connectedDevices, setConnectedDevices] = React.useState<
         MovesenseReadyDevice[]
     >([]);
+    const subscriptions = React.useRef<Map<string, Set<string>>>(
+        new Map<string, Set<string>>()
+    );
 
     // Methods
     const requestPermissions = async () => {
@@ -160,9 +167,22 @@ export default function App() {
         });
         eventEmitter.addListener(
             'ConnectionCompleted',
-            (event: MovesenseReadyDevice) => {
+            async (event: MovesenseReadyDevice) => {
                 console.log('ConnectionCompleted ->', p(event));
                 updateAvailableAndConnected();
+                // EXAMPLE: how to recieve ECG from the movesense band
+                subscriptions.current.set(event.address, new Set<string>());
+                singlas.forEach(async (s: string) => {
+                    // src: https://www.movesense.com/docs/mobile/android/main/#mds-rest-api
+                    subscriptions.current
+                        .get(event.address)
+                        ?.add(
+                            await RNMovesense.subscribe(
+                                'suunto://MDS/EventListener',
+                                '{"Uri": "' + event.serial + s + '"}'
+                            )
+                        );
+                });
             }
         );
         eventEmitter.addListener('Disconnected', (event: MovesenseDevice) => {
