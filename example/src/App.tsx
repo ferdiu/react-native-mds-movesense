@@ -162,10 +162,12 @@ export default function App() {
             'ConnectionCompleted',
             (event: MovesenseReadyDevice) => {
                 console.log('ConnectionCompleted ->', p(event));
+                updateAvailableAndConnected();
             }
         );
         eventEmitter.addListener('Disconnected', (event: MovesenseDevice) => {
             console.log('Disconnected ->', p(event));
+            updateAvailableAndConnected();
         });
         // Errors
         eventEmitter.addListener('Error', (event: ErrorEvent) => {

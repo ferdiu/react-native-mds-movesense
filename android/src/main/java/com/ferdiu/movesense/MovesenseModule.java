@@ -156,7 +156,7 @@ public class MovesenseModule extends ReactContextBaseJavaModule {
                     WritableMap m = Arguments.createMap();
                     m.putString("address", address);
                     m.putString("serial", serial);
-                    sendEvent("ConnectionCompleted", m);
+                    sendEvent("ConnectionCompleted", m.copy());
 
                     promise.resolve(m);
                 }
@@ -166,7 +166,7 @@ public class MovesenseModule extends ReactContextBaseJavaModule {
             public void onError(MdsException e) {
                 WritableMap m = Arguments.createMap();
                 m.putString("message", e.getMessage());
-                sendEvent("Error", m);
+                sendEvent("Error", m.copy());
 
                 promise.reject("Error occurred", m);
             }
@@ -236,7 +236,7 @@ public class MovesenseModule extends ReactContextBaseJavaModule {
                 m.putString("uri", uri);
                 m.putString("contract", contract);
                 m.putString("data", data);
-                sendEvent("GETSuccess", m);
+                sendEvent("GETSuccess", m.copy());
 
                 promise.resolve(m);
             }
@@ -248,7 +248,7 @@ public class MovesenseModule extends ReactContextBaseJavaModule {
                 m.putString("contract", contract);
                 m.putString("requestType", "GET");
                 m.putString("message", e.getMessage());
-                sendEvent("Error", m);
+                sendEvent("Error", m.copy());
 
                 promise.reject("Error occurred", m);
             }
@@ -264,7 +264,7 @@ public class MovesenseModule extends ReactContextBaseJavaModule {
                 m.putString("uri", uri);
                 m.putString("contract", contract);
                 m.putString("data", data);
-                sendEvent("PUTSuccess", m);
+                sendEvent("PUTSuccess", m.copy());
 
                 promise.resolve(m);
             }
@@ -276,7 +276,7 @@ public class MovesenseModule extends ReactContextBaseJavaModule {
                 m.putString("contract", contract);
                 m.putString("requestType", "PUT");
                 m.putString("message", e.getMessage());
-                sendEvent("Error", m);
+                sendEvent("Error", m.copy());
 
                 promise.reject("Error occurred", m);
             }
@@ -292,9 +292,9 @@ public class MovesenseModule extends ReactContextBaseJavaModule {
                 m.putString("uri", uri);
                 m.putString("contract", contract);
                 m.putString("data", data);
-                sendEvent("POSTSuccess", m);
+                sendEvent("POSTSuccess", m.copy());
 
-                promise.resolve(data);
+                promise.resolve(m);
             }
 
             @Override
@@ -304,7 +304,7 @@ public class MovesenseModule extends ReactContextBaseJavaModule {
                 m.putString("contract", contract);
                 m.putString("requestType", "POST");
                 m.putString("message", e.getMessage());
-                sendEvent("Error", m);
+                sendEvent("Error", m.copy());
 
                 promise.reject("Error occurred", m);
             }
@@ -320,9 +320,9 @@ public class MovesenseModule extends ReactContextBaseJavaModule {
                 m.putString("uri", uri);
                 m.putString("contract", contract);
                 m.putString("data", data);
-                sendEvent("DELETESuccess", m);
+                sendEvent("DELETESuccess", m.copy());
 
-                promise.resolve(data);
+                promise.resolve(m);
             }
 
             @Override
@@ -332,7 +332,7 @@ public class MovesenseModule extends ReactContextBaseJavaModule {
                 m.putString("contract", contract);
                 m.putString("requestType", "DELETE");
                 m.putString("message", e.getMessage());
-                sendEvent("Error", m);
+                sendEvent("Error", m.copy());
 
                 promise.reject("Error occurred", m);
             }
