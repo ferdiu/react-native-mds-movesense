@@ -1,4 +1,4 @@
-# react-native-movesense
+# react-native-mds-movesense
 
 React native wrapper for [movesense](https://www.movesense.com/movesense-active/) library.
 
@@ -9,7 +9,7 @@ This library currently supports only Android but not iOS. I have little experien
 ## Installation
 
 ```sh
-npm install react-native-movesense
+npm install react-native-mds-movesense
 ```
 
 ## Android permissions
@@ -33,7 +33,7 @@ import RNMovesense, {
     type MovesenseReadyDevice,
     type MovesenseDevice,
     type MovesenseScannedDevice,
-} from 'react-native-movesense';
+} from 'react-native-mds-movesense';
 
 // ...
 
@@ -67,7 +67,7 @@ where:
 
 To find more informations about the `contract` parameter check the [documentation](https://www.movesense.com/docs/esw/api_reference/).
 
-> For a more comprehensive example, check out the [example app](https://github.com/ferdiu/react-native-movesense/blob/main/example/src/App.tsx).
+> For a more comprehensive example, check out the [example app](https://github.com/ferdiu/react-native-mds-movesense/blob/main/example/src/App.tsx).
 
 ### Events
 
@@ -126,7 +126,7 @@ eventEmitter.removeAllListeners('Notification');
 eventEmitter.removeAllListeners('NotificationError');
 ```
 
-> For a more comprehensive example, check out the [example app](https://github.com/ferdiu/react-native-movesense/blob/main/example/src/App.tsx).
+> For a more comprehensive example, check out the [example app](https://github.com/ferdiu/react-native-mds-movesense/blob/main/example/src/App.tsx).
 
 ## Contributing
 
