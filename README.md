@@ -124,6 +124,7 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 
 - [ ] Add tests;
 - [ ] Add more inline documentation for types;
+- [ ] Add iOS implementation;
 - [ ] Implement types in files:
     - [ ] `src/types/info.ts`;
     - [ ] `src/types/comm/ble.ts`;
