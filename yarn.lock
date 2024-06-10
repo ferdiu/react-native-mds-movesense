@@ -11035,9 +11035,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-movesense-example@workspace:example":
+"react-native-mds-movesense-example@workspace:example":
   version: 0.0.0-use.local
-  resolution: "react-native-movesense-example@workspace:example"
+  resolution: "react-native-mds-movesense-example@workspace:example"
   dependencies:
     "@babel/core": ^7.20.0
     "@babel/preset-env": ^7.20.0
@@ -11052,9 +11052,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"react-native-movesense@workspace:.":
+"react-native-mds-movesense@workspace:.":
   version: 0.0.0-use.local
-  resolution: "react-native-movesense@workspace:."
+  resolution: "react-native-mds-movesense@workspace:."
   dependencies:
     "@commitlint/config-conventional": ^17.0.2
     "@evilmartians/lefthook": ^1.5.0

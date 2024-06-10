@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "paths": {
-      "react-native-movesense": ["./src/index"]
+      "react-native-mds-movesense": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

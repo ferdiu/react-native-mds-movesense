@@ -1,5 +1,5 @@
 {
-  "name": "react-native-movesense",
+  "name": "react-native-mds-movesense",
   "version": "0.1.0",
   "description": "React native wrapper for movesense library",
   "main": "lib/commonjs/index",
@@ -26,7 +26,7 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace react-native-movesense-example",
+    "example": "yarn workspace react-native-mds-movesense-example",
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
@@ -41,14 +41,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ferdiu/react-native-movesense.git"
+    "url": "git+https://github.com/ferdiu/react-native-mds-movesense.git"
   },
   "author": "Federico Manzella <ferdiu.manzella@gmail.com> (https://github.com/ferdiu)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ferdiu/react-native-movesense/issues"
+    "url": "https://github.com/ferdiu/react-native-mds-movesense/issues"
   },
-  "homepage": "https://github.com/ferdiu/react-native-movesense#readme",
+  "homepage": "https://github.com/ferdiu/react-native-mds-movesense#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

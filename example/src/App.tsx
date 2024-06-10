@@ -18,7 +18,7 @@ import RNMovesense, {
     type NotificationErrorEvent,
     type NotificationEvent,
     type MovesenseScannedDevice,
-} from 'react-native-movesense';
+} from 'react-native-mds-movesense';
 
 // Emitter
 import { NativeEventEmitter, NativeModules } from 'react-native';
