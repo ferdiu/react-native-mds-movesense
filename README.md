@@ -12,6 +12,18 @@ This library currently supports only Android but not iOS. I have little experien
 npm install react-native-movesense
 ```
 
+## Android permissions
+
+Add the following permissions to your `android/src/main/AndroidManifest.xml`:
+
+```xml
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+```
+
 ## Usage
 
 Simple usage:
