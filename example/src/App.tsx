@@ -210,7 +210,7 @@ export default function App() {
         });
         // Notification
         eventEmitter.addListener('Notification', (event: NotificationEvent) => {
-            console.log('Notification ->', p(event));
+            console.log('Notification ->', p(JSON.parse(event.data)));
         });
         eventEmitter.addListener(
             'NotificationError',

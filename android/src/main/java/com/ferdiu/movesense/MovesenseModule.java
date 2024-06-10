@@ -112,6 +112,7 @@ public class MovesenseModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void scan(final Promise promise) {
         try {
+            this.mAvailableDevices.clear();
             this.scanner.scan();
             this.mIsScanning = true;
             promise.resolve(null);

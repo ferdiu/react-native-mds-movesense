@@ -1,4 +1,9 @@
 import { NativeModules, Platform } from 'react-native';
+import {
+    type MovesenseDevice,
+    type MovesenseScannedDevice,
+    type MovesenseReadyDevice,
+} from './types/events';
 
 const LINKING_ERROR =
     `The package 'react-native-movesense' doesn't seem to be linked. Make sure: \n\n` +
@@ -16,43 +21,6 @@ const Movesense = NativeModules.Movesense
               },
           }
       );
-
-export type MovesenseDevice = {
-    address: string;
-};
-
-export type MovesenseReadyDevice = {
-    serial: string;
-} & MovesenseDevice;
-
-export type MovesenseScannedDevice = {
-    name?: string;
-} & MovesenseDevice;
-
-export type ResponseMessage = {
-    uri: string;
-    contract: string;
-    data: string;
-};
-
-export type ErrorEvent = {
-    message: string;
-    uri?: string;
-    contract?: string;
-    requestType?: string;
-};
-
-type Subscription = {
-    subscription: string;
-};
-
-export type NotificationEvent = {
-    data: string;
-} & Subscription;
-
-export type NotificationErrorEvent = {
-    message: string;
-} & Subscription;
 
 interface MovesenseInterface {
     /**
@@ -133,4 +101,8 @@ interface MovesenseInterface {
      */
     unsubscribe(subscriptionId: string): Promise<void>;
 }
+
+// Export all types...
+export * from './types/index';
+// ... and the module it self
 export default Movesense as MovesenseInterface;
