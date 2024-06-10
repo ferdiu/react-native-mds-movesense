@@ -2,6 +2,10 @@
 
 React native wrapper for [movesense](https://www.movesense.com/movesense-active/) library.
 
+## ⚠️ WARNING ⚠️
+
+This library currently supports only Android but not iOS. I have little experience with Swift and I don't have access to any iOS device. If you are able to help, please open an issue or PR.
+
 ## Installation
 
 ```sh
