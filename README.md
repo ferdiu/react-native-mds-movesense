@@ -12,6 +12,25 @@ This library currently supports only Android but not iOS. I have little experien
 npm install react-native-mds-movesense
 ```
 
+or
+
+```sh
+yarn add react-native-mds-movesense
+```
+
+For now it requires to perform some modifications in you `./android/build.gradle`; add the following (it is used to include the original AAR in the final build):
+
+```gradle
+allprojects {
+    repositories {
+        flatDir{
+            dirs "$rootDir/../node_modules/react-native-mds-movesense/android/libs"
+        }
+    }
+}
+```
+
+
 ## Android permissions
 
 Add the following permissions to your `android/src/main/AndroidManifest.xml`:
